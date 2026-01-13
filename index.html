@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Markdown</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <!-- Barra de herramientas -->
+    <div class="toolbar" id="toolbar">
+        <!-- Formato de texto básico -->
+        <button id="btnBold" title="Negrita">
+            <strong>B</strong> Negrita
+        </button>
+        <button id="btnItalic" title="Cursiva">
+            <em>I</em> Cursiva
+        </button>
+        <button id="btnStrikethrough" title="Tachado">
+            <s>S</s> Tachado
+        </button>
+        <div class="toolbar-separator"></div>
+        
+        <!-- Encabezados -->
+        <button id="btnH1" title="Título 1">H1</button>
+        <button id="btnH2" title="Título 2">H2</button>
+        <button id="btnH3" title="Título 3">H3</button>
+        <div class="toolbar-separator"></div>
+        
+        <!-- Listas -->
+        <button id="btnUnorderedList" title="Lista desordenada">
+            • Lista
+        </button>
+        <button id="btnOrderedList" title="Lista ordenada">
+            1. Lista
+        </button>
+        <button id="btnTaskList" title="Lista de tareas">
+            ☐ Tareas
+        </button>
+        <div class="toolbar-separator"></div>
+        
+        <!-- Elementos especiales -->
+        <button id="btnQuote" title="Cita">
+            &gt; Cita
+        </button>
+        <button id="btnCode" title="Código inline">
+            ` Código
+        </button>
+        <button id="btnCodeBlock" title="Bloque de código">
+            &lt;/&gt; Bloque
+        </button>
+        <div class="toolbar-separator"></div>
+        
+        <!-- Enlaces e imágenes -->
+        <button id="btnLink" title="Enlace">
+            🔗 Enlace
+        </button>
+        <button id="btnImage" title="Imagen">
+            🖼️ Imagen
+        </button>
+        <div class="toolbar-separator"></div>
+        
+        <!-- Tabla -->
+        <button id="btnTable" title="Tabla">
+            ║ Tabla
+        </button>
+        <div class="toolbar-separator"></div>
+        
+        <!-- Línea horizontal -->
+        <button id="btnHorizontalRule" title="Línea horizontal">
+            ───
+        </button>
+        
+        <div class="toolbar-spacer"></div>
+        <button id="btnFullscreen" class="btn-fullscreen" title="Vista completa">
+            ⛶ Vista Completa
+        </button>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="main-container" id="mainContainer">
+        <!-- Sección del editor -->
+        <div class="editor-section">
+            <div class="editor-header">Editor</div>
+            <textarea id="editor" placeholder="Escribe tu Markdown aquí..."></textarea>
+        </div>
+
+        <!-- Sección de previsualización -->
+        <div class="preview-section">
+            <div class="preview-header">
+                <span>Previsualización</span>
+                <button id="btnBack" class="btn-back" style="display: none;" title="Volver a editar">
+                    ← Volver a editar
+                </button>
+            </div>
+            <div class="preview-content" id="preview"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
